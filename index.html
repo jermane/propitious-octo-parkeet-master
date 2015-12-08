@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Drag Drop and Hit - JavaScript Interactive Basics</title>
+<link href="interactive.css" rel="stylesheet" type="text/css" />
+<script>var zon = false; // false for no comments from danzen.js</script>
+<script type="text/javascript" src="zim_1.4.4.js"></script>
+<script src="createjs-2015.05.21.min.js"></script>
+<style>
+	/*#logo {position:absolute; left:100px; top:100px;}*/
+	#top{background-color: blue; width: 100%; height: 200px; }
+	/*#myCanvas .div { width:100%; position: absolute; height: 50px;}*/
+	#myCanvas {background-color: lightblue;}
+	input[type=radio] {margin-left: 20px;}
+	#bottom {position: relative; width: 100%; height: 1000px; background-color: red;}
+</style>
+
+<!-- include the complete createJS suite
+or can go to createjs.com for individual code
+
+EaselJS - working with Canvas - drawing and objects
+TweenJS - animation with code
+SoundJS - working with Sound
+PreloadJS - preload images to work with
+
+-->
+
+
+
+<script>
+
+
+window.addEventListener('load', interactive);
+
+function interactive() {
+
+	zog("Project");
+
+	var canvas = document.getElementById("myCanvas");
+	var parent = document.getElementById("top");
+	canvas.width = parent.offsetWidth;
+	canvas.height = parent.offsetHeight;
+
+
+	var stage = new createjs.Stage("myCanvas");
+	stage.enableMouseOver(10);
+
+	var stageW = stage.canvas.width;
+	var stageH = stage.canvas.height;
+
+		var listener = createjs.Ticker.on("tick", stage);
+
+		createjs.Ticker.framerate = 30;
+
+	// var myCircle = new zim.Circle(20, "orange", "red", 2);
+	// stage.addChild(myCircle);
+	// myCircle.x = 50;
+	// myCircle.y = stageH /2;
+	// myCircle.alpha = 1;
+	//
+	// zim.drag(myCircle, null, null , "pointer");
+
+
+	// var myCircle2 = new zim.Circle(20, "orange", "red", 2);
+	// stage.addChild(myCircle2);
+	// myCircle2.x = 100;
+	// myCircle2.y = stageH /2;
+	//
+	// zim.drag(myCircle2, null, null , "pointer");
+
+	var bed = new createjs.Bitmap("images/bed.png");
+	stage.addChild(bed);
+
+	bed.x = stageW / 2;
+	bed.y = -100;
+
+	// bed.alpha = 0;
+
+	var bed2 = new createjs.Bitmap("images/bed.png");
+	stage.addChild(bed2);
+
+	bed2.x = stageW / 2;
+	bed2.y = -100;
+	// bed2.alpha = 0;
+
+
+	var oneBed = document.querySelector('#oneBed');
+
+	oneBed.addEventListener('click', dropBed1);
+
+	function dropBed1(){
+
+		stage.removeChild(bed);
+		stage.removeChild(bed2);
+		stage.addChild(bed);
+		bed.x = stageW / 2;
+		bed.y = -100;
+		// bed.alpha = 1;
+
+		zog("click");
+
+		var tween = createjs.Tween.get(bed);
+		// tween.to({alpha:1}, 100, createjs.Ease.linear);
+		tween.to({y:150}, 300, createjs.Ease.linear)
+		tween.to({y:130}, 200, createjs.Ease.bounceOut)
+		tween.to({y:150}, 100, createjs.Ease.bounceIn);
+	}
+
+	var twoBed = document.querySelector('#twoBed');
+
+	twoBed.addEventListener('click', dropBed2);
+
+	function dropBed2(){
+
+		zog("click");
+
+		stage.removeChild(bed);
+		stage.addChildAt(bed,0);
+		stage.addChildAt(bed2,1);
+
+		bed.x = stageW / 2;
+		bed.y = -100;
+
+		bed2.x = stageW / 2;
+		bed2.y = -100;
+
+
+		// bed2.alpha = 1;
+		var tween = createjs.Tween.get(bed);
+		// tween.to({alpha:1}, 100, createjs.Ease.linear);
+		tween.to({y:150}, 300, createjs.Ease.linear)
+		tween.to({y:130}, 200, createjs.Ease.bounceOut)
+		tween.to({y:150}, 100, createjs.Ease.bounceIn);
+
+		var tween2 = createjs.Tween.get(bed2);
+		tween2.wait(700)
+		tween2.to({y:110}, 300, createjs.Ease.linear)
+		tween2.to({y:80, rotation: 5}, 200, createjs.Ease.bounceOut)
+		tween2.to({y:110}, 100, createjs.Ease.bounceIn);
+
+	}
+
+
+
+
+
+	// var bedTween2 = createjs.Tween.get(bed2)
+	// bedTween2.wait(800)
+	// bedTween2.to({alpha:1}, 100, createjs.Ease.linear)
+	// bedTween2.to({y:100, rotation: -5}, 300, createjs.Ease.linear)
+	// bedTween2.to({y:110}, 200, createjs.Ease.bounceOut)
+	//
+	// var listener = createjs.Ticker.on("tick", stage);
+
+	// stage.update();
+
+	// zim.drag(bed, null, null , "pointer");
+	//
+
+	//
+	// createjs.Ticker.framerate = 30;
+	// createjs.Tween.get(myCircle)
+	// .to({y:150}, 3000, createjs.Ease.backOut)
+	// .to({x:700}, 3000, createjs.Ease.bounceIn)
+	// .wait(1000)
+	// .call(done);
+	//
+	// function done(){
+	// 	myCircle.scaleX = myCircle.scaleY = 2;
+	// 	stage.update();
+	// }
+	//
+	// 	var listener = createjs.Ticker.on("tick", stage);
+
+
+
+	// var c=document.getElementById("myCanvas");
+
+
+
+	// ctx.tween.get(ctx);
+	// .to()
+
+	// var ctx=canvas.getContext("2d");
+	// ctx.beginPath();
+	// ctx.moveTo(20,20);
+
+	// ctx.lineTo(20,100);
+	// ctx.lineTo(70,100);
+	// ctx.lineTo(70,70);
+	// ctx.lineTo(150,70);
+	// ctx.stroke();
+
+	// stage.addChild(ctx);
+
+				stage.update();
+	}
+
+
+
+</script>
+
+
+</head>
+<body>
+
+<!-- <nav><a href="index.html"><img src="images/logo_s.jpg" /></a></nav> -->
+
+<!-- <div></div> -->
+<div id="top"><canvas id="myCanvas">TEST</canvas></div>
+<div id="bottom">
+		<input type="radio" id="oneBed" name="beds" value="oneBed" required/>
+		<label for="oneBed">1 Bedroom</label>
+		<input type="radio" id="twoBed" name="beds" value="twobed" required/>
+		<label for="twoBed">2 Bedroom</label>
+</div>
+<!-- <footer>
+Mini Site - Interactive Basics - Interactive Coding - Sheridan Interactive Media
+</footer> -->
+
+</body>
+</html>
