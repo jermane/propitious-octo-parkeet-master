@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rent_Alert_Renter</title>
+	<link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+	<script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+</head>
+<body>
+	<form action = "renter.php" method = "post">
+
+
+													<!-- Price Range -->
+		<div id = "price"><label>Price Range:</label>
+			<p>
+			<label for="amount">Price range:</label>
+			<input type="text" id="amount" readonly style="border:0; color:#295A8C; font-weight:bold;">
+			</p>
+		</div>
+
+
+
+								<!-- Location -->
+		<div class =  "location"> <label>Location:</label>
+			<div id = "loc1">
+				<a>
+				<input type = "checkbox" name = "location[]" id = "etobicoke" value = "etobicoke"/>
+				<label for ="etobicoke"> Etobicoke </label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "york" value = "york"/>
+				<label for ="york"> York </label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "north_york" value = "north_york"/>
+				<label for ="north_york"> North York </label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "toronto_north" value = "toronto_north"/>
+				<label for ="toronto_north"> Toronto North </label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "toronto_central" value = "toronto_central"/>
+				<label for ="toronto_central"> Toronto Central </label>
+				</a>
+			</div>
+
+			<div id = "loc2">
+				<a>
+				<input type = "checkbox" name = "location[]" id = "toronto_west" value = "toronto_west"/>
+				<label for ="toronto_west"> Toronto West </label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "toronto_east" value = "toronto_east"/>
+				<label for ="toronto_east"> Toronto East </label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "down_town" value = "down_town"/>
+				<label for ="down_town"> Downtown Toronto </label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "east_york" value = "east_york"/>
+				<label for ="east_york"> East York</label>
+				</a>
+				<a>
+				<input type = "checkbox" name = "location[]" id = "scarborough" value = "scarborough"/>
+				<label for ="scarborough"> Scarborough </label>
+				</a>
+			</div>
+		</div>
+
+
+								<!-- Move in Month -->
+		<div class = "move_in_month">
+
+			<label>Move in Month:</label>
+			<select  id = "month" name = "month">
+				<option value = "january">January</option>
+				<option value = "febuary">Febuary</option>
+				<option value = "march">March</option>
+				<option value = "april">April</option>
+				<option value = "may">May</option>
+				<option value = "june">June</option>
+				<option value = "july">July</option>
+				<option value = "august">August</option>
+				<option value = "september">September</option>
+				<option value = "october">October</option>
+				<option value = "november">November</option>
+				<option value = "december">December</option>
+			</select>
+
+			<div id = "year">
+				<input type="text" name="year" maxlength = "4" placeholder="2016">
+			</div>
+		</div>
+
+																	<!-- Bedrooms -->
+		<div class = "bedrooms"><label>How many bedrooms?</label>
+			<a>
+					<input type = "radio" name = "bedrooms" id ="bachelor" value = "bachelor"/>
+					<label for ="bachelor"> Bachelor </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id ="1bed" value = "1"/>
+					<label for ="1"> 1 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id = "2bed" value = "2"/>
+					<label for ="2"> 2 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id ="3bed" value = "3"/>
+					<label for ="3"> 3 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id = "4bed" value = "4"/>
+					<label for ="4"> 4 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id = "5bed" value = "5"/>
+					<label for ="5"> 5 </label>
+			</a>
+		</div>
+
+
+																<!-- Bathroom -->
+		<div class = "bathrooms"><label>How many bathrooms?</label>
+			<a>
+					<input type = "radio" name = "bathrooms" id ="1bath" value = "1"/>
+					<label for ="1"> 1 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bathrooms" id = "2bath" value = "2"/>
+					<label for ="2"> 2 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bathrooms" id ="3bath" value = "3"/>
+					<label for ="3"> 3 </label>
+			</a>
+
+		</div>
+
+
+																	<!-- Pets -->
+		<div class = "pets"><label>Do you want a place that allows pets?</label>
+			<a>
+					<input type = "radio" name = "pets" id = "pets_yes" value = "yes"/>
+					<label for ="yes"> Yes </label>
+			</a>
+			<a>
+					<input type = "radio" name = "pets" id ="pets_no" value = "no"/>
+					<label for ="no"> No </label>
+			</a>
+
+		</div>
+
+																	<!-- Smoking/non -->
+		<div class = "smoking/non"><label>Do you want a place that allows smoking?</label>
+			<a>
+					<input type = "radio" name = "smoking" id = "smoke_yes" value = "yes"/>
+					<label for ="yes"> Yes </label>
+			</a>
+			<a>
+					<input type = "radio" name = "smoking" id ="smoke_no" value = "no"/>
+					<label for ="no"> No </label>
+			</a>
+
+		</div>
+
+																<!-- Comment Box -->
+		<div class = "comment_box"> <label>Additional Comments:</label>
+					 <input type="text" name="comment" maxlength = "255">
+		</div>
+
+
+
+																<!-- Submit -->
+		<div class = "submit">
+			<input type = "submit" name = "submit" id = "submit" value = "Submit"/>
+		</div>
+	</form>
+	<script>
+		 $(function() {
+			 $( "#price" ).slider({
+				 range: true,
+				 min: 100,
+				 max: 5000,
+				 values: [ 500, 2000 ],
+				 slide: function( event, ui ) {
+					 $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+				 }
+			 });
+			 $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+				 " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		 });
+ </script>
+</body>
+</html>
