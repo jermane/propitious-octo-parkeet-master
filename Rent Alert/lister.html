@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rent_Alert_Lister</title>
+	<link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+	<script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+</head>
+<body>
+	<form action = "lister.php" method = "post">
+
+
+													<!-- Price -->
+		<div id = "price"><label>Price:</label>
+			<a>
+				<input type="text" maxlength = "11" value = "amount" id="amount">/MONTH
+			</a>
+		</div>
+
+
+												<!-- Location -->
+		<div class = "location">
+				<a>
+					<label>Address</label>
+					<input type="text" id="address">
+				</a>
+				<a>
+					<input type="text" id="unit" placeholder="Unit/Apt#">
+				</a>
+
+				<select id = "region" name = "region"><label>Region:</label>
+						<option value="" disabled selected>Select The Region...</option>
+						<option value = "etobicoke"> Etobicoke</option>
+						<option value = "york"> York</option>
+						<option value = "north_york"> North York</option>
+						<option value = "toronto_north"> Toronto North</option>
+						<option value = "toronto_central"> Toronto Central</option>
+						<option value ="toronto_west"> Toronto West</option>
+						<option value = "toronto_east"> Toronto East</option>
+						<option value = "down_town"> Downtown Toronto</option>
+						<option value = "east_york"> East York</option>
+						<option value ="scarborough"> Scarborough </option>
+				</select>
+		</div>
+
+
+					  						<!-- Move in Month -->
+		<div class = "move_in_month">
+			<label for="month">Move in Month:
+					<select  id = "month" name = "month">
+							<option value = "january">January</option>
+							<option value = "febuary">Febuary</option>
+							<option value = "march">March</option>
+							<option value = "april">April</option>
+							<option value = "may">May</option>
+							<option value = "june">June</option>
+							<option value = "july">July</option>
+							<option value = "august">August</option>
+							<option value = "september">September</option>
+							<option value = "october">October</option>
+							<option value = "november">November</option>
+							<option value = "december">December</option>
+					</select>
+				</label>
+
+				<div id = "year">
+						 <input type="text" name="year" maxlength = "4" placeholder="2016">
+				</div>
+		</div>
+
+
+														<!-- Bedrooms -->
+		<div class = "bedrooms"><label>How many bedrooms?</label>
+			<a>
+					<input type = "radio" name = "bedrooms" id ="bachelor" value = "b"/>
+					<label for ="bachelor"> Bachelor </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id ="1bed" value = "1"/>
+					<label for ="1"> 1 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id = "2bed" value = "2"/>
+					<label for ="2"> 2 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id ="3bed" value = "3"/>
+					<label for ="3"> 3 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id = "4bed" value = "4"/>
+					<label for ="4"> 4 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bedrooms" id = "5bed" value = "5"/>
+					<label for ="5"> 5 </label>
+			</a>
+		</div>
+
+
+
+														<!-- Bathrooms -->
+		<div class = "bathrooms"><label>How many bathrooms?</label>
+			<a>
+					<input type = "radio" name = "bathrooms" id ="1bath" value = "1"/>
+					<label for ="1"> 1 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bathrooms" id = "2bath" value = "2"/>
+					<label for ="2"> 2 </label>
+			</a>
+			<a>
+					<input type = "radio" name = "bathrooms" id ="3bath" value = "3"/>
+					<label for ="3"> 3 </label>
+			</a>
+
+		</div>
+
+
+																<!-- Pets -->
+		<div class = "pets"><label>Do you allow pets at your place?</label>
+			<a>
+					<input type = "radio" name = "pets" id = "pets_yes" value = "yes"/>
+					<label for ="yes"> Yes </label>
+			</a>
+			<a>
+					<input type = "radio" name = "pets" id ="pets_no" value = "no"/>
+					<label for ="no"> No </label>
+			</a>
+
+		</div>
+
+
+															<!-- Smoking/non -->
+		<div class = "smoking"><label>Do you allow smoking at your place?</label>
+			<a>
+					<input type = "radio" name = "smoking" id = "smoke_yes" value = "yes"/>
+					<label for ="yes"> Yes </label>
+			</a>
+			<a>
+					<input type = "radio" name = "smoking" id ="smoke_no" value = "no"/>
+					<label for ="no"> No </label>
+			</a>
+
+		</div>
+
+														<!-- Comment Box -->
+		<div class = "comment_box"> <label>Additional Comments:</label>
+					 <input type="text" name="comment" maxlength = "255">
+		</div>
+
+
+		<div class = "submit">
+			<input type = "submit" name = "submit" id = "submit" value = "Submit"/>
+		</div>
+	</form>
+
+
+</body>
+</html>
